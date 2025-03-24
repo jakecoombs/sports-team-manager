@@ -36,7 +36,7 @@ export const Output = (props: TeamManagementSharedProps) => {
           {outputText}
         </AlertDescription>
       </Alert>
-      <Button onClick={copyOutputToClipboard}>Copy Text</Button>
+      <Button className="my-4" onClick={copyOutputToClipboard}>Copy Text</Button>
     </>
   );
 };

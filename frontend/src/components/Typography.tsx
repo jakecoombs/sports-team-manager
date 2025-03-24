@@ -21,9 +21,3 @@ export const H4 = ({ children }: { children: React.ReactNode }) => (
     {children}
   </h4>
 );
-
-export const P = ({ children }: { children: React.ReactNode }) => (
-  <p className="leading-7 [&:not(:first-child)]:mt-6">
-    {children}
-  </p>
-);

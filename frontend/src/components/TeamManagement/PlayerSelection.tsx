@@ -1,8 +1,7 @@
 import { FormEvent, useState } from "react";
 import { toast } from "sonner";
-import { H3, P } from "../Typography";
+import { H3 } from "../Typography";
 import { Button } from "../ui/button";
-import { Card, CardContent } from "../ui/card";
 import { Input } from "../ui/input";
 import { TeamManagementSharedProps } from "./TeamManagement";
 
@@ -42,53 +41,9 @@ const AddPlayerInput = ({ setPlayers, players }: TeamManagementSharedProps) => {
   );
 };
 
-const PlayerList = ({ players, setPlayers }: TeamManagementSharedProps) => {
-  if (players.length == 0) {
-    return <P>No players added yet.</P>;
-  }
-
-  function removePlayerByName(name: string) {
-    setPlayers([...players].filter((player) => player.name != name));
-  }
-
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      {players.map((player, i) => (
-        <RenderPlayer
-          key={`player-{${i}}`}
-          name={player.name}
-          onRemove={removePlayerByName}
-        />
-      ))}
-    </div>
-  );
-};
-
-const RenderPlayer = ({
-  name,
-  onRemove,
-}: {
-  name: string;
-  onRemove: (name: string) => void;
-}) => (
-  <Card className="py-2">
-    <CardContent className="flex content-center justify-between">
-      <P>{name}</P>
-      <Button
-        type="button"
-        variant="destructive"
-        onClick={() => onRemove(name)}
-      >
-        X
-      </Button>
-    </CardContent>
-  </Card>
-);
-
 export const PlayerSelection = (props: TeamManagementSharedProps) => (
   <>
-    <H3>Available Players ({props.players.length})</H3>
+    <H3>Add Players</H3>
     <AddPlayerInput {...props} />
-    <PlayerList {...props} />
   </>
 );

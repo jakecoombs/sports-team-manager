@@ -2,18 +2,39 @@
 
 A sports team manager web application for helping create and manage teams.
 
-## Development Setup
+![Sports Team Manager Application Screenshot](images/screenshot.png)
 
-Clone the repository:
+1. Add players
+2. Assign players to teams
+3. Copy shuffled teams lineups to clipboard
+4. Share!
+
+## Setup
+
+1. Clone the repository:
 
 ```
 git clone git@github.com:jakecoombs/sports-team-manager.git
 ```
 
-Create local env files:
+2. Create local env files:
 
 ```
 cp .env.example .env.local
+```
+
+3. Update variables in `.env.local`:
+
+```
+NEXT_PUBLIC_CLUB_NAME="Sports Club"
+NEXT_PUBLIC_TEAM_A="Team A"
+NEXT_PUBLIC_TEAM_B="Team B"
+```
+
+4. Run the web application:
+
+```
+make start-prod
 ```
 
 ## Make Commands

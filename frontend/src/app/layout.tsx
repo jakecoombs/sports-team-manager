@@ -1,6 +1,5 @@
 import "../styles/globals.css";
 
-import { Navigation } from "@/components/Navigation";
 import { Toaster } from "@/components/ui/sonner";
 import { CLUB_NAME } from "@/lib/consts";
 import type { Metadata } from "next";
@@ -18,7 +17,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navigation />
         <main>{children}</main>
         <Toaster />
       </body>
