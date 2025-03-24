@@ -36,7 +36,7 @@ const AddPlayerInput = ({ setPlayers, players }: TeamManagementSharedProps) => {
         value={playerName}
         onChange={(e) => setPlayerName(e.target.value)}
       />
-      <Button type="button">Add</Button>
+      <Button type="submit">Add</Button>
     </form>
   );
 };
