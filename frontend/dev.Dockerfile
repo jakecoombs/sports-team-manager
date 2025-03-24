@@ -4,13 +4,11 @@ FROM node:22-alpine
 # Set the working directory in the container
 WORKDIR /app
 
-# Install app dependencies
-COPY package*.json ./
-
-RUN npm install
-
 # Bundle app source
 COPY . .
+
+# Install dependencies
+RUN npm install
 
 # Start the application
 CMD npm run dev

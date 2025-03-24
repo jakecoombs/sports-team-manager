@@ -1,11 +1,12 @@
-import { NavigationMenuDemo } from "@/components/Navigation";
+import { Navigation } from "@/components/Navigation";
 import "../styles/globals.css";
 
 import type { Metadata } from "next";
+import { CLUB_NAME } from "@/lib/consts";
 
 export const metadata: Metadata = {
-  title: "Docker Next.js Template",
-  description: "A dockerized next.js web application.",
+  title: CLUB_NAME,
+  description: "Sports Team Manager.",
 };
 
 export default function RootLayout({
@@ -16,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <NavigationMenuDemo />
+        <Navigation />
         <main>{children}</main>
       </body>
     </html>

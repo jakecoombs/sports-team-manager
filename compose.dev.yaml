@@ -9,7 +9,7 @@ services:
       - .env.dev.local
     volumes:
       - ./frontend/src:/app/src
-      - ./frontend/public:/app/public
+      - ./frontend/package.json:/app/package.json
     restart: always
     ports:
       - 3000:3000
