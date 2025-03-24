@@ -1,15 +1,10 @@
-import { Player } from "@/lib/interfaces";
 import { H3, H4, P } from "../Typography";
 import { Card, CardContent } from "../ui/card";
 import { ToggleGroup, ToggleGroupItem } from "../ui/toggle-group";
 import { TEAM_A, TEAM_B } from "@/lib/consts";
+import { TeamManagementSharedProps } from "./TeamManagement";
 
-interface Props {
-  players: Player[];
-  setPlayers: (players: Player[]) => void;
-}
-
-const PlayerList = ({ players, setPlayers }: Props) => {
+const PlayerList = ({ players, setPlayers }: TeamManagementSharedProps) => {
   if (players.length == 0) {
     return <P>No players added yet.</P>;
   }
@@ -61,7 +56,7 @@ const RenderPlayer = ({
   </Card>
 );
 
-const DisplayTeams = ({ players }: Props) => {
+const DisplayTeams = ({ players }: TeamManagementSharedProps) => {
   const TeamPlayerList = ({ team }: { team: string }) => {
     const teamPlayers = [...players].filter((player) => player.team == team);
     if (teamPlayers.length == 0) return <span />;
@@ -89,7 +84,7 @@ const DisplayTeams = ({ players }: Props) => {
   );
 };
 
-export const TeamSelection = (props: Props) => (
+export const TeamSelection = (props: TeamManagementSharedProps) => (
   <>
     <H3>Team Selection</H3>
     <PlayerList {...props} />

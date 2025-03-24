@@ -1,17 +1,12 @@
-import { Player } from "@/lib/interfaces";
 import { FormEvent, useState } from "react";
 import { toast } from "sonner";
 import { H3, P } from "../Typography";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 import { Input } from "../ui/input";
+import { TeamManagementSharedProps } from "./TeamManagement";
 
-interface Props {
-  players: Player[];
-  setPlayers: (players: Player[]) => void;
-}
-
-const AddPlayerInput = ({ setPlayers, players }: Props) => {
+const AddPlayerInput = ({ setPlayers, players }: TeamManagementSharedProps) => {
   const [playerName, setPlayerName] = useState("");
 
   const handleAddPlayer = (e: FormEvent<HTMLFormElement>) => {
@@ -47,7 +42,7 @@ const AddPlayerInput = ({ setPlayers, players }: Props) => {
   );
 };
 
-const PlayerList = ({ players, setPlayers }: Props) => {
+const PlayerList = ({ players, setPlayers }: TeamManagementSharedProps) => {
   if (players.length == 0) {
     return <P>No players added yet.</P>;
   }
@@ -90,7 +85,7 @@ const RenderPlayer = ({
   </Card>
 );
 
-export const PlayerSelection = (props: Props) => (
+export const PlayerSelection = (props: TeamManagementSharedProps) => (
   <>
     <H3>Available Players ({props.players.length})</H3>
     <AddPlayerInput {...props} />

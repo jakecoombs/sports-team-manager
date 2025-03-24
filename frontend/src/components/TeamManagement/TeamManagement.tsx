@@ -1,10 +1,16 @@
 "use client";
 
-import { H2, H3, P } from "@/components/Typography";
+import { H2 } from "@/components/Typography";
 import { Player } from "@/lib/interfaces";
 import { useState } from "react";
+import { Output } from "./Output";
 import { PlayerSelection } from "./PlayerSelection";
 import { TeamSelection } from "./TeamSelection";
+
+export interface TeamManagementSharedProps {
+  players: Player[];
+  setPlayers: (players: Player[]) => void;
+}
 
 export const TeamManagement = () => {
   const [players, setPlayers] = useState<Player[]>([]);
@@ -15,8 +21,7 @@ export const TeamManagement = () => {
       <H2>Team Management</H2>
       <PlayerSelection {...props} />
       <TeamSelection {...props} />
-      <H3>Output</H3>
-      <P>A message to send out for the teams.</P>
+      <Output {...props} />
     </>
   );
 };
