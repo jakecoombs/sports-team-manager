@@ -6,7 +6,7 @@ services:
       dockerfile: prod.Dockerfile
     # Set environment variables based on the .env file
     env_file:
-      - .env.production.local
+      - .env.local
     restart: always
     ports:
       - 3000:3000

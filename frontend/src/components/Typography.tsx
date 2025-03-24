@@ -16,6 +16,12 @@ export const H3 = ({ children }: { children: React.ReactNode }) => (
   </h3>
 );
 
+export const H4 = ({ children }: { children: React.ReactNode }) => (
+  <h4 className="mt-8 scroll-m-20 text-xl font-semibold tracking-tight">
+    {children}
+  </h4>
+);
+
 export const P = ({ children }: { children: React.ReactNode }) => (
   <p className="leading-7 [&:not(:first-child)]:mt-6">
     {children}

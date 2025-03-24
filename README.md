@@ -13,7 +13,7 @@ git clone git@github.com:jakecoombs/sports-team-manager.git
 Create local env files:
 
 ```
-cp .env.dev.example .env.dev.local; cp .env.prod.example .env.prod.local
+cp .env.example .env.local
 ```
 
 ## Make Commands

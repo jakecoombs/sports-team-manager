@@ -6,7 +6,7 @@ services:
       dockerfile: dev.Dockerfile
     # Set environment variables based on the .env file
     env_file:
-      - .env.dev.local
+      - .env.local
     volumes:
       - ./frontend/src:/app/src
       - ./frontend/package.json:/app/package.json
