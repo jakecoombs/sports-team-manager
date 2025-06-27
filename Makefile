@@ -1,23 +1,8 @@
-.PHONY: build-dev
-build-dev: ## Build the dev docker image.
-	docker compose -f compose.dev.yaml build
+build-dev:
+	docker build -t sports-team-manager-dev \
+	-f dev.Dockerfile .
 
-.PHONY: start-dev
-start-dev: ## Start the dev docker container.
-	docker compose -f compose.dev.yaml up -d
-
-.PHONY: stop-dev
-stop-dev: ## Stop the dev docker container.
-	docker compose -f compose.dev.yaml down
-  
-.PHONY: build-prod
-build-prod: ## Build the prod docker image.
-	docker compose -f compose.prod.yaml build
-
-.PHONY: start-prod
-start-prod: ## Start the prod docker container.
-	docker compose -f compose.prod.yaml up -d
-
-.PHONY: stop-prod
-stop-prod: ## Stop the prod docker container.
-	docker compose -f compose.prod.yaml down
+dev:
+	docker run --rm -it \
+	-p 3000:3000 \
+	sports-team-manager-dev

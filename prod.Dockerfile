@@ -12,8 +12,11 @@ RUN npm install
 # Bundle app source
 COPY . .
 
+# Expose the port your app runs on
+EXPOSE 3000
+
 # Build your Next.js app for production
 RUN npm run build
 
 # Start the application
-CMD npm run start
+CMD ["npm", "run", "start"]
